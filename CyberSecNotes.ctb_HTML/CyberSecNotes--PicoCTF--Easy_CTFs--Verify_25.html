@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Verify</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Verify</h1><br/><p><ol><li>Provided with SHA-256 hash, decrypt script, and ssh ip: ssh -p 52348 ctf-player@rhea.picoctf.net</li><li>Once sshed, there are several files and a decrypt.sh program on the system</li><li>One file was checksum.txt and contained: 467a10447deb3d4e17634cacc2a68ba6c2bb62a6637dad9145ea673bf0be5e02</li><li>Ran grep + sha256sum on all files in files folder to search for correct file containing flag: sha256sum * | grep “previously found checksum”</li><li>Result was file named: c6c8b911</li><li>Ran given decrypt file on file to get flag: picoCTF{trust_but_verify_c6c8b911}</li></ol></p><p></p><p></p><p></p><p></p><p>New tools:</p><p>sha256sum (linux command that decrypts in console)</p><p>* allows you to apply something to every file in a directory in console</p></div>
+</body>
+</html>

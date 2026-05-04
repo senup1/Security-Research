@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Buffer Overflows</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Buffer Overflows</h1><br/><p>Buffer Overflows occur when a program tries to write too much data into a fixed length block of memory.</p><p></p><p>In older systems the strategy was to input malicious code along with spam for overflow.</p><p>Then overwrite the return address with the overflow and redirect back to the malicious code entered.</p><p>In modern systems that don&#39;t allow executing data, find overflow, leak address of pointer or stack data, and overwrite the return address to exisiting functions in the system like system(&quot;/bin/sh&quot;) for example.</p><p></p><p>Example of jumping to custom address (kind of):</p><p>address to replace: 0x7fabc500</p><p>it may be stored like this: 0x00 0xc5 0xab 0x7f</p><p>fill buffer like this: AAAAAAAAAAAAAAAABBBB</p><p>A is to fill buffer B is placeholder for custom address jump</p><p>replace B&#39;s like this: AAAAAAAAAAAAAAAA\x00\xc5\xab\x7f</p><p>this will take you to the new address (which is the same as original in this example) of: 0x7fabc500</p><p></p><p>Prevention:</p><p>Keep everythin up to date.</p><p>Look for news on security issues with application versions being used.</p><p>Use managed services like AWS, Lambda, or Vercel to push the burden onto hosting providers.</p></div>
+</body>
+</html>

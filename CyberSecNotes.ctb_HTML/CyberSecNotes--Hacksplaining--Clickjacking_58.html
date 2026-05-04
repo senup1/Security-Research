@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Clickjacking</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Clickjacking</h1><br/><p>Clickjacking is tricking users into clicking on a harmful link by disguising it as something else.</p><p></p><p>An example:</p><p>Clone website with similar http address (t3sla instead of tesla)</p><p>Iframe original website into clone to appear legit</p><p>Cover entire page with transparent div</p><p>wrap div in a tag</p><p>make a tag do whatever you want</p><p></p><p>Clickjacking might not necessarily affect you but may affect your users.</p><p></p><p>Prevention:</p><p>Use the &quot;Content-Security-Policy&quot; HTTP header to prevent your website from being Iframed</p></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Cross-Site Request Forgery</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Cross-Site Request Forgery</h1><br/><p>Cross-Site Request Forgery (CSRF) occurs when a user is tricked into interacting with a page/script on a third-party site that generates a malicious request to your site.</p><p></p><p>Easier to use when actions like making posts, comments, etc use GET requests as all the information for it would be passed through the URL of the HTTP request.</p><p></p><p>Commonly pronounced as “sea-surf”</p><p></p><p>Protection:</p><p>Ensure non-GET requests can only originate from your client side code</p><p>Try only using GET requests to view resources rather than modify them.</p><p>Using Anti-Forgerty Tokens (include secret and unique token with each HTTP response)</p></div>
+</body>
+</html>

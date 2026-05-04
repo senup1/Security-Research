@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Host Header Poisoning</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Host Header Poisoning</h1><br/><p>Host Header Poisoning occurs when the “Host” header in an HTTP request is modified to be a domain under the attackers control before being sent.</p><p></p><p>This is possible because it is often possible for the server to be unaware of what domain it is being hosted on. As a result, the web server relies on the “Host” header whenever it needs the domain for something like a transactional email.</p><p></p><p>Protection:</p><p>Take the domain name from server side config</p><p>Use relative URLs wherever possible</p></div>
+</body>
+</html>

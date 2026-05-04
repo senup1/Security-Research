@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>DNS Poisoning</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>DNS Poisoning</h1><br/><p>DNS poisoning occurs when a DNS server is attacked and makes valid requests to websites resolve to fake websites</p><p></p><p>A simpler attack would be modifying the victims /etc/hosts file (exists on windows and linux) to resolve to whatever ip they desire.</p><p></p><p>Slightly more complicated would be via MITM</p><p></p><p>More serious attacks target ISPs DNS resolvers.</p><p>(More details):<ul><li>ISPs have multiple DNS Resolver servers so not everyone will be using the same one</li><li>Finding DNS Resolver servers is extremely easy and public (Example: just use: cat /etc/resolv.conf or ipconfig /all)</li></ul></p><p></p><p>Protection:</p><p>Enabling HTTPS as this requires presenting a certificate to the victim&#39;s browser</p><p></p><p>Due to the nature of HTTPS being much more commonly used, DNS poisoning attacks are rarely used in isolation. They are usually combined with a compromised certificate</p></div>
+</body>
+</html>

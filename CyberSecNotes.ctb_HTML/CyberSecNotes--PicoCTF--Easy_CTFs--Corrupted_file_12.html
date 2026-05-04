@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Corrupted file</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Corrupted file</h1><br/><p>This CTF provided a corrupted file stating a couple of bytes could be missing.<ol><li>First few  characters indicate it is a jpeg as jfif is the standard compression format for jpeg: \x\FF\E0\00<strong><span style="text-decoration:underline;">JFIF</span></strong>\00\00\00\00\00\00\FF\DB\00C\00</li><li>Used online hexdump editor (<a href="https://hexed.it/">https://hexed.it/</a>) to open file</li><li>Searched google for proper starting hex value for jpeg</li><li>Adjusted incorrect 5C 78 hex values to correct FF D8 values</li><li>File now opens properly and displays flag as text in image</li><li>Converted image to text to get flag (forgot to type flag here before deleting image)</li></ol></p><p></p><p></p><p></p><p>New tools:</p><p><a href="https://hexed.it/">https://hexed.it/</a></p></div>
+</body>
+</html>

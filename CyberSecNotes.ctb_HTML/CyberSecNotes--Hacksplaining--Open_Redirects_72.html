@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Open Redirects</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Open Redirects</h1><br/><p>Open Redirect vulnerabiliteis occur when the next parameter of a redirect URL is able to be modified and not checked</p><p></p><p>Example:</p><p>If you have a website where you need to login to access content and someone tries to access the content that requires login without being logged in, it can be common to queue the redirect after a successful login to the content they were trying to access. If that queued URL is modified and it is not checked, then it can lead to malicious actions by attackers.</p><p></p><p>Protection:</p><p>Disallow offsite redirects</p><p>Make sure all redirects are relative paths</p><p>Implementing interstitial pages (pages that state you are leaving the current site)</p></div>
+</body>
+</html>
