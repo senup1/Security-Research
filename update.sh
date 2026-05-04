@@ -24,6 +24,9 @@ echo "Moving new files to docs..."
 mv "$EXPORT_DIR"/* docs/
 rmdir "$EXPORT_DIR"
 
+echo "Fixing index page..."
+sed -i "s|<iframe src='' id='page_frame'>|<iframe src='CyberSecNotes_1.html' id='page_frame'>|" docs/index.html
+
 echo "Committing to GitHub..."
 git add .
 git commit -m "$COMMIT_MSG"
