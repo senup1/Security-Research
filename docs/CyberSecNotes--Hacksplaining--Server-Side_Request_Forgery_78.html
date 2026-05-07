@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Server-Side Request Forgery</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Server-Side Request Forgery</h1><br/><p>Server-Side Request Forgery (SSRF) occurs when an attacker tricks a server into making HTTP requests on their behalf to a place the attacker chooses.</p><p></p><p>Example:</p><p>If a user on discord pasted a link to a website, discord typically shows a preview of the website.</p><p>The same thing happens in many other social media platforms and websites.</p><p>Let&#39;s say instead the user enters a url like <a href="http://localhost/admin">http://localhost/admin</a> or <a href="http://1.1.1.1/latest/meta-data">http://1.1.1.1/latest/meta-data</a>,  then the server may print sensitive information.</p><p>It could also be used to send a bunch of requests from the server to the target url and act as a dos attack in the attackers place.</p><p>They could also probe random ip addresses and ports (most likely one at a time) to see if they are active and host anything useful to them</p><p></p><p>This can occur any time a server has to make a request to a third party server.</p><p>Some other examples:</p><p>Singe sign on (sso)</p><p>third party api call</p><p>image upload function that accepts urls</p><p></p><p>They can also just intercept and edit the HTTP requests from any of the methods mentioned above or more.</p><p></p><p>Protection:</p><p>Disable external validation URLs</p><p>Only make outgoing HTTP calls on behalf of real users (logged in users to log their activities)</p><p>Validate the URLs you do access</p><p>Keep a blocklist of domians you will never access in server side requests</p></div>
+</body>
+</html>

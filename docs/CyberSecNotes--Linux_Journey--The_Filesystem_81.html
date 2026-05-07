@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>The Filesystem</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>The Filesystem</h1><br/><p>Essential System Directories:</p><p>/bin contains essential command line programs available to all users such as ls, mv</p><p></p><p>/sbin holds essential system binaries which are primarily intended for system administration</p><p></p><p>/etc is the core system configuration directory. It contains config files for the operating system and installed applications (should not contain any executables)</p><p></p><p>/lib contains essential shared library files that system binaries in /bin and /sbin depend on</p><p></p><p>/boot stores the files required for the system&#39;s boot processes</p><p></p><p></p><p>User and Application Data:</p><p>/home contains personal directories, files, and documents for each user.</p><p></p><p>/root is the home directory for the root user</p><p></p><p>/opt is reserved for optional third party application software packages (where you should install third party applications)</p><p></p><p>/usr contains user installed software and utilities (this is where system managed software ends up while opt is for manually installed software)</p><p></p><p></p><p>Dynamic and Temporary Data:</p><p>/var stores files that are expected to change in size and content, such as logs, cahces, etc</p><p></p><p>/tmp is for temp files, often cleared on system reboots</p><p></p><p>/run contains process IDs and other runtime data</p><p></p><p></p><p>Device and Mount Points:</p><p>/dev contains special device files that represent hardware components like hard drives and input devices</p><p></p><p>/media is a standard mount point for removable media like USB drives</p><p></p><p>/mnt is a generic mount point for temporarily mounting filesystems</p><p></p><p></p><p>System Information:</p><p>/proc is a virtual filesystem that provies real time information about currently running processes</p><p></p><p>/srv contains files for a web browser</p><p></p><p></p><p></p><p>To mount to a file system:</p><p>Use sudo mount -t (for type) &lt;device type&gt; &lt;device location&gt; /mnt (or another custom mount folder)</p><p>To unmount from a file system:</p><p>Use sudo umount &lt;device location&gt; or sudo umount /mnt (whatever folder you chose as the mounting spot)</p></div>
+</body>
+</html>
