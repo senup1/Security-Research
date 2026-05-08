@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Network Sharing</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Network Sharing</h1><br/><p>The secure copy command (scp):</p><p>This can be used to transfer files over ssh</p><p></p><p>Copy a file from a local host to a remote host:</p><p>scp &lt;filename&gt;.&lt;fileextension&gt; &lt;username&gt;@&lt;ip/domain&gt;:/&lt;remotedirectory&gt;</p><p></p><p>Copy a file from a remote host to local host</p><p>scp &lt;username&gt;@&lt;ip/domain&gt;:/&lt;remotefile&gt; /&lt;localdirectory&gt;</p><p></p><p>to copy directories instead of files add the -r flag after scp</p><p></p><p></p><p>For remote synchronization use (rsync):</p><p>This is useful when there is an unstable network connection. It is able to remember where it left off and only send over what hasn&#39;t been sent yet rather than restarting the whole transfer.</p><p></p><p>Some flags:</p><p>-v: verbose output</p><p>-r: recursive (for directories)</p><p>-h: human readable output</p><p>-z: compresses file data during transfer (good for slow connections)</p><p>-a: preserves permissions, ownership, timestampts, etc</p><p></p><p>Examples:</p><p>Create backup directory on the same machine:</p><p>rsync -avh &lt;localdirectoryone&gt; &lt;localdirectorytwo&gt;</p><p></p><p>Sync files from a local host to a remote host:</p><p>rsync -avh /&lt;localdirectory&gt; &lt;username&gt;@&lt;ip/domain&gt;:/&lt;remotedirectory&gt;</p><p></p><p>Sync files from a remote host to local host:</p><p>rsync -avh &lt;username&gt;@&lt;ip/domain&gt;:/&lt;remotedirectory&gt; /&lt;localdirectory&gt;</p><p></p><p></p><p>Starting a simple HTTP server:</p><p>Navigate to the directory</p><p>use: python -m http.server</p><p>To access the simple server from another machine on the network:</p><p>go to <a href="http://<ipaddress>:8000">http://&lt;ipaddress&gt;:8000</a></p><p></p><p></p><p></p><p></p></div>
+</body>
+</html>

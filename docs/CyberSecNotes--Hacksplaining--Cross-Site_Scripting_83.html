@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Cross-Site Scripting</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Cross-Site Scripting</h1><br/><p>Cross-Site Scripting (XSS) permits a malicious user to execute arbitrary chunks of javascript when other users visit the website.</p><p></p><p>DOM based XSS:</p><p>If the # at the end of a url used to mark a specific location on the page (called a URI fragment) isnt properly sanitized it can take malicious javascript input and run it.</p><p></p><p>Also remember URI fragments are not sent to the server so there would be no way of logging the XSS event that occured.</p><p></p><p>Protection:</p><p>Input Sanitization</p><p></p></div>
+</body>
+</html>
