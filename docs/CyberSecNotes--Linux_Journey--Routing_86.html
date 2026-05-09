@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Routing</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Routing</h1><br/><p>Packet Path to an External Network:</p><p>The sending host recognizes that the target IP address is not local.</p><p>The host consults its routing table, since there&#39;s no specific route for the eternal IP, it uses the default route, which points to the default gateway (a router).</p><p>For the packet info it uses its IP, destination IP, its MAC address, and the router&#39;s MAC as the destination MAC since the actual destination MAC is unknown.</p><p>The router rewrites the original MAC to be its own and sets the destination MAC to the MAC of the next hop.</p><p>This process is repeated until it arrives at the router connected to the destination&#39;s local network</p><p>That router then uses arp to deliver the packet to the right host.</p></div>
+</body>
+</html>
