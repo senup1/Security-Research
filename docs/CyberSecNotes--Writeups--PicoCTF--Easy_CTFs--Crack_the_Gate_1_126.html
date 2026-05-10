@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Crack the Gate 1</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Crack the Gate 1</h1><br/><p>This CTF provided a login portal website, the login email: ctf-player@picoctf.org, and information that there is a secret somewhere left by the devloper of the website</p><p>Website preview:</p><p><img src="images/126-1.png" alt="images/126-1.png" /><ol><li>Checked page source</li><li>Found: &lt;!-- ABGR: Wnpx - grzcbenel olcnff: hfr urnqre &quot;K-Qri-Npprff: lrf&quot; --&gt;</li><li>Used dcode.fr/cipher-identifier to identify encryption type</li><li>Used cyberchef to decode rot13</li><li>Result: Jack - temporary bypass: use header &quot;X-Dev-Access: yes&quot;</li><li>Used burpsuite to intercept login attempt with given email and password for password</li><li>Sent GET request to repeater</li><li>Modified GET to POST and added the custom header to the HTTP request</li><li>Sent request and got flag: picoCTF{brut4_f0rc4_1a386e6f}</li></ol></p><p></p><p></p><p>New info:</p><p>Some ways to modify a HTTP request (using burpsuite repeater):</p><p>You can change the starting line for example GET / HTTP/1.1 to GET /flag.txt HTTP/1.1</p><p>You can add a custom header wherever in the HTTP request (example of custom header: X-Custom-Header: something)</p><p></p><p>New tools:</p><p><a href="https://www.dcode.fr/cipher-identifier">https://www.dcode.fr/cipher-identifier</a></p></div>
+</body>
+</html>

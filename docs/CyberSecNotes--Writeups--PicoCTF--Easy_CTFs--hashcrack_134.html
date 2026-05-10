@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>hashcrack</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>hashcrack</h1><br/><p>This CTF provided a weakly hashed password on a server to crack.</p><p><img src="images/134-1.png" alt="images/134-1.png" /><ol><li>Used hash-identifier to identify the hash was md5</li><li>Used hashcat to crack given hash (482c811da5d5b4bc6d497ffa98491e38) to get: password123</li><li>Entered password for identified hash to receive new hash: b7a875fc1ea228b9061041b7cec4bd3c52ab3ce3</li><li>Identified hash is SHA-1</li><li>Cracked hash to receive: letmein</li><li>Given another new hash: 916e8c4f79b25028c9e467f1eb8eee6d6bbdff965f9928310ad30a8d88697745</li><li>Identified hash is SHA-256</li><li>Cracked hash to receive: qwerty098</li><li>Received flag: picoCTF{UseStr0nG_h@shEs_&amp;PaSswDs!_93e052d7}</li></ol></p><p></p><p></p><p></p><p></p><p></p><p>New tools:</p><p>hash-identifier (identifies hash)</p><p>hashcat (cracks hashes)</p></div>
+</body>
+</html>
