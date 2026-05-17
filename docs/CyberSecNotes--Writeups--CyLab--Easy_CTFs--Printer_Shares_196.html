@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Printer Shares</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Printer Shares</h1><br/><p><ol><li>Provided host to nc to and told a sensitive file was sent to a printer on the network</li><li>Used smbclient -L \\\\&lt;hostprovided&gt;\\ -p &lt;port provided&gt; to check files</li><li>Found shares disk</li><li>Used smbclient \\\\&lt;hostprovided&gt;\\shares -p &lt;port provided&gt; to access shares disk</li><li>Connected successfully and used ls to see files flag.txt and dummy.txt</li><li>Used get flag.txt to get flag</li><li>Exited smbclient and catted flag.txt to get: picoCTF{5mb_pr1nter_5h4re5_7a400ec3}</li></ol></p></div>
+</body>
+</html>
