@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>head-dump</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>head-dump</h1><br/><p><ol><li>Provided with web application and information that it contains an endpoint leaking information: </li></ol><img src="images/228-1.png" alt="images/228-1.png" /><ol><li>One of the post titles contains a API Documentation hashtag that points to a directory</li><li>Clicking said hashtag navigates to page containing all endpoints for api implementation: </li></ol><img src="images/228-2.png" alt="images/228-2.png" /><ol><li>One of the endpoints was /heapdump. Since the name of the ctf is head-dump this seemed to be a good endpoint to start expirimenting with</li><li>Clicked try it out and execute to try endpoint: </li></ol><img src="images/228-3.png" alt="images/228-3.png" /> <ol><li>Resulted in download file option</li><li>Downloaded file to get heapdump-1779661884673.heapsnapshot file</li><li>file heapdump-1779661884673.heapsnapshot -&gt; Ascii with long lines</li><li>less heapdump-1779661884673.heapsnapshot -&gt; A lot of miscellaneous text</li><li>/ -&gt; pico -&gt; picoCTF{Pat!3nt_15_Th3_K3y_a485f162}</li></ol></p></div>
+</body>
+</html>

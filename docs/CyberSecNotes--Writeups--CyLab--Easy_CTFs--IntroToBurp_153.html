@@ -7,6 +7,6 @@
   <link rel="stylesheet" href="res/styles4.css" type="text/css" />
 </head>
 <body>
-<div class='page'><h1 class='title'>IntroToBurp</h1><br/><p><ol><li>Provided with login form website and told to use burpsuite</li><li>Used burpsuite to edit HTTP request</li><li>Sent modified request to get flag: picoCTF{#0TP_Bypvss_SuCc3$S_6bffad21}</li></ol></p></div>
+<div class='page'><h1 class='title'>IntroToBurp</h1><br/><p><ol><li>Provided with login form website and told to use burpsuite</li><li>Used burpsuite look at HTTP request</li><li>Noticed csrf_token value is provided</li><li>Copied csrf_token</li><li>Used csrf_token on request to bypass otp page</li><li>Sent modified request to get flag: picoCTF{#0TP_Bypvss_SuCc3$S_6bffad21}</li></ol></p></div>
 </body>
 </html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>information</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>information</h1><br/><p><ol><li>Provided with cat.jpg and information that the file can be changed in some way to get flag</li><li>file cat.jpg -&gt; it is indeed a jpeg</li><li>exiftool cat.jpg -&gt; License field seems to contain base64 encoded content</li><li>Used cyberchef to decrypt from base64 -&gt; picoCTF{the_m3tadata_1s_modified}</li></ol></p></div>
+</body>
+</html>

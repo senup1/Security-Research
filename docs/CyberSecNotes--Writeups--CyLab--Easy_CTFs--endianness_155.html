@@ -7,6 +7,6 @@
   <link rel="stylesheet" href="res/styles4.css" type="text/css" />
 </head>
 <body>
-<div class='page'><h1 class='title'>endianness</h1><br/><p><ol><li>Provided with string of characters wanting endians of string</li><li>Converted text to hexadecimal</li><li>Little endian starts with the larger hex bit first and ends with the smaller bit</li><li>Big endian starts with the smaller hex bit and ends with the larger bit</li><li>Entered both endians to get flag: picoCTF{3ndi4n_sw4p_su33ess_cfe38ef0}</li></ol></p></div>
+<div class='page'><h1 class='title'>endianness</h1><br/><p><ol><li>Provided with string of characters wanting endians of string</li><li>Converted text to hexadecimal</li><li>Little endian starts with the ending hex bit of string</li><li>Big endian starts with the starting hex bit of string</li><li>For non string hex bits, the beginning bit is always the start point for big endian and the ending bit is always the beginning for the small endian</li><li>Entered both endians to get flag: picoCTF{3ndi4n_sw4p_su33ess_cfe38ef0}</li></ol></p></div>
 </body>
 </html>
