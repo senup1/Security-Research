@@ -25,8 +25,7 @@ mv "$EXPORT_DIR"/* docs/
 rmdir "$EXPORT_DIR"
 
 echo "Fixing index page..."
-ROOT_HTML=$(ls docs/ | grep -v "\-\-" | grep "_1\.html")
-sed -i "s|<iframe src='' id='page_frame'>|<iframe src='$ROOT_HTML' id='page_frame'>|" docs/index.html
+sed -i "s|<iframe src='' id='page_frame'>|<iframe src='Cybersecurity_Notes_and_Writeups_1.html' id='page_frame'>|" docs/index.html
 
 echo "Committing to GitHub..."
 git add .
