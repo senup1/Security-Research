@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Server-side request forgery (SSRF)</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Server-side request forgery (SSRF)</h1><br/><p>Server-side request forgery is a web vulnerability that allows an attacker to cause the server-side applicaiton to make requests to unintended locations.</p><p></p><p>In a typical SSRF attack, the attacker may cause the server to make a connection to internal services and leak sensitive data.</p><p></p><p>Typically accessing the internal network in this situation would involve supplying a URL with a hostname like 127.0.0.1 or localhost.</p><p></p><p>These attacks are typically able to occur due to requests from a local machine being implicitly trusted.</p><p></p><p>In some cases there may be other back end systems that are only locally visible and therefore unprotected. These systems would be accessible through SSRF.</p></div>
+</body>
+</html>

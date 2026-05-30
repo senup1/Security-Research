@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Username enumeration via different responses</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Username enumeration via different responses</h1><br/><p><ol><li>Provided with blog website and username and password wordlists that contain valid credentials.</li><li>Navigated to /login on website</li><li>Launched burpsuite and intercepted login attempt with credentials “test:test”: </li></ol><img src="images/274-1.png" alt="images/274-1.png" /><ol><li>Forwarded request to intruder and used wordlists provided for sniper attack with username then sniper attack with password.</li><li>This method was chosen due to username enumeration being possible and therefore being faster than a clusterbomb attack.</li><li>Discovererd credentials “arizona:131313”. Mainly looked at status code and length differences in results of attacks: </li></ol><img src="images/274-2.png" alt="images/274-2.png" /><ol><li>Logged in with discovered credentials and completed lab successfully: </li></ol><img src="images/274-3.png" alt="images/274-3.png" /></p></div>
+</body>
+</html>

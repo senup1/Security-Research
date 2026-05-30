@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Basic SSRF against the local server</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Basic SSRF against the local server</h1><br/><p><ol><li>Provided with storefront website and told to access localhost/admin and delete user carlos</li><li>Navigated to page of one of the products</li><li>Launched burpsuite, intercepted request for check stock, located stockApi header in HTTP request:</li></ol></p><p> <img src="images/277-1.png" alt="images/277-1.png" /><ol><li>Changed URL to http%3a//localhost/admin and sent request</li><li>Located URL to delete target user account: </li></ol><img src="images/277-2.png" alt="images/277-2.png" /><ol><li>Changed stockApi target to discovered URL of http%3a//localhost/admin/delete%3fusername%3dcarlos and sent request</li><li>Completed lab successfully: </li></ol><img src="images/277-3.png" alt="images/277-3.png" /></p></div>
+</body>
+</html>

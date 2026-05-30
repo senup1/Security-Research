@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Basic SSRF against another back-end system</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Basic SSRF against another back-end system</h1><br/><p><ol><li>Provided with storefront website, told to scan the internal ip adress range 192.168.0.x for an admin interface on port 8080, and delete user carlos</li><li>Navigated to page of a product</li><li>Interecepted check stock request on burpsuite and sent to Intruder</li><li>Changed stockApi target URL to target :8080/admin and started sniper attack on last octet of IP listed in URL using list of numbers from 1-255</li><li>The result for the last octet being set to 187 was the only request with a 200 status code</li><li>Sent to Repeater and changed stockApi target URL to http%3a//192.168.0.187%3a8080/admin</li><li>Located delete URL for user carlos</li><li>Sent request to URL http://192.168.0.187:8080/admin/delete?username=carlos</li><li>Successfully completed lab: </li></ol><img src="images/278-1.png" alt="images/278-1.png" /></p></div>
+</body>
+</html>
