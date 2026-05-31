@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>SQL injection attack, querying the database type and version on MySQL and Microsoft</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>SQL injection attack, querying the database type and version on MySQL and Microsoft</h1><br/><p><ol><li>Provided with storefront website and told to display database version</li><li>Launched burpsuite and intercepted request of selecting random category</li><li>Forwarded request to repeater and appended &#39;UNION+SELECT+NULL,+NULL--</li><li>Internal error</li><li>Tried appending &#39;UNION+SELECT+NULL,+NULL%23 which succeeded</li><li>Moved on to testing which columns allow string by appending &#39;UNION+SELECT+&#39;a&#39;,+NULL%23 and &#39;UNION+SELECT+&#39;a&#39;,+&#39;a&#39;%23</li><li>Discovered both columns return strings</li><li>Appended &#39;UNION+SELECT+&#39;a&#39;,%40%40version%23</li><li>Successfully discovered version was 8.0.42-0ubuntu0.20.04.1 and completed lab: </li></ol><img src="images/301-1.png" alt="images/301-1.png" /></p></div>
+</body>
+</html>

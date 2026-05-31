@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>SQL injection UNION attack, retrieving multiple values in a single column</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>SQL injection UNION attack, retrieving multiple values in a single column</h1><br/><p><ol><li>Provided with storefront website, information that there is another table called users with columns username and password, told to print all usernames and passwords, and told to log in as the administrator</li><li>Selected random catergory</li><li>Appended &#39;UNION SELECT NULL, NULL FROM users--</li><li>Discovered column count is 2</li><li>Appended ‘UNION SELECT ’a&#39;, NULL FROM users --</li><li>Internal error</li><li>Tried switching ‘a’ and NULL positions</li><li>Discovered only column two returns strings</li><li>Appended ‘UNION SELECT NULL , username || ’:&#39; || password FROM users--</li><li>Discovered admin credentials “administrator:r9mter6k924avfdnf3wv”</li><li>Navigated to /login and logged in with credentials to complete lab successfully: </li></ol><img src="images/299-1.png" alt="images/299-1.png" /></p></div>
+</body>
+</html>

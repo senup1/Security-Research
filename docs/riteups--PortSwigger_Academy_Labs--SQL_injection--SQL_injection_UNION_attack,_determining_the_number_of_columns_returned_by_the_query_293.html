@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>SQL injection UNION attack, determining the number of columns returned by the query</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>SQL injection UNION attack, determining the number of columns returned by the query</h1><br/><p><ol><li>Provided with storefront website and told to determine the number of columns returned by the query</li><li>Selected random category to filter by</li><li>Attempted appending &#39;UNION SELECT NULL-- to end of URL</li><li>Resulted in internal error</li><li>Appended more NULLs to query until internal error stopped</li><li>Loaded results successfully</li><li>Discovered the number of columns returned is 3 and completed lab successfully: </li></ol><img src="images/293-1.png" alt="images/293-1.png" /></p></div>
+</body>
+</html>

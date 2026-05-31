@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>SQL injection UNION attack, finding a column containing text</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>SQL injection UNION attack, finding a column containing text</h1><br/><p><ol><li>Provided with storefront website and told to display &#39;fKSH3A&#39; in query results</li><li>Selected random category filter</li><li>Appended &#39;UNION SELECT “a”, NULL, NULL-- to end of URL</li><li>Internal error</li><li>Tried moving “a” through each possible column</li><li>Discovered the second column accepts strings</li><li>Appended &#39;UNION SELECT NULL, &#39;fKSH3A&#39;, NULL-- to URL</li><li>Successfully displayed &#39;fKSH3A&#39; and completed lab: </li></ol><img src="images/295-1.png" alt="images/295-1.png" /></p></div>
+</body>
+</html>

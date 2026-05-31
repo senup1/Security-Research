@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>OS command injection, simple case</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>OS command injection, simple case</h1><br/><p><ol><li>Provided with storefront website and told to execute the command whoami</li><li>Opened a random product page</li><li>Launched burpsuite, intercepted request for check stock, forwarded request to repeater</li><li>Modified one of the arguments to include ; whoami ; at the end: </li></ol><img src="images/283-1.png" alt="images/283-1.png" /><ol><li>Discovered peter-CQ9zts in response and completed lab successfully: </li></ol><img src="images/283-2.png" alt="images/283-2.png" /></p></div>
+</body>
+</html>

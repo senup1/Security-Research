@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>SQL injection UNION attack, retrieving data from other tables</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>SQL injection UNION attack, retrieving data from other tables</h1><br/><p><ol><li>Provided with storefront website, information that there is another table called users with columns username and password, told to print all usernames and passwords, and told to log in as the administrator</li><li>Selected random catergory</li><li>Appended &#39;UNION SELECT username, password FROM users--</li><li>Discovered credentials “administrator:s9xhkwz268u9bq7hzj9n”</li><li>Navigated to /login and logged in with credentials to complete lab successfully: </li></ol><img src="images/297-1.png" alt="images/297-1.png" /></p></div>
+</body>
+</html>

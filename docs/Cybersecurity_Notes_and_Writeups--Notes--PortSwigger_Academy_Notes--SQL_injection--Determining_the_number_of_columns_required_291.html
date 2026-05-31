@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Determining the number of columns required</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Determining the number of columns required</h1><br/><p>One method of determining the number of columns being returned is injection a series of ORDER BY clauses and incrementing the column index until an error occurs.</p><p></p><p>Example: </p><p>&#39; ORDER BY 1 --</p><p>&#39; ORDER BY 2 --</p><p>etc.</p><p></p><p>The second method involves sending a series of UNION SELECT payloads specifying a different number of null values.</p><p></p><p>Example:</p><p>&#39; UNION SELECT NULL--</p><p>&#39; UNION SELECT NULL, NULL --</p><p>&#39; UNION SELECT NULL, NULL, NULL --</p><p>etc.</p><p></p><p>With this method, there will be an error until the number of NULLs matches the number of columns.</p><p></p><p>Different databases may have different syntaxes.</p><p>Oracle will require every SELECT query to have a FROM keyword and specify a valid table.</p><p>There is a built in table on Oracle called dual which can be used for this purpose.</p><p>On MySQL there needs to be a space following the double dash sequence.</p><p>etc.</p></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Retrieving multiple values within a single column</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Retrieving multiple values within a single column</h1><br/><p>In some cases a query with comma seperated arguments may only return a single column.</p><p>In this case one can use string concatenation operaters for the specified database model to combine multiple columns into one.</p><p>Example: ‘UNION SELECT username || ’~&#39;|| password FROM users--</p><p>This example works with Oracle and the ~ is used as a seperator/spacer between the data</p></div>
+</body>
+</html>

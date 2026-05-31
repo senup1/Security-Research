@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Examining the database</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Examining the database</h1><br/><p>To exploit SQL injection vulnerabilities, finding information about the datbase is crutial.</p><p>This information may include:<ul><li>Type and version of database software</li><li>The tables and columns the database contains</li></ul></p><p></p><p>Here are some ways to retrieve the type and version of the database in a single query:<ul><li>Microsoft, MySQL : SELECT @@version</li><li>Oracle : SELECT * FROM v$version</li><li>PostgreSQL : SELECT version()</li></ul></p><p></p><p>Most database types (except Oracle) have a set of views called the information schema which provides information about the database.</p><p>For example you can query information_schema.tables to list the tables in the datbase.</p><p>Example: SELECT * FROM information_schema.tables</p><p>This example results in a list off the tables in the db and other information.</p><p>You can then query information_schema.columns to list the columns of individual tables</p><p>Example: SELECT * FROM information_schema.columns WHERE table_name = ‘Users’</p></div>
+</body>
+</html>

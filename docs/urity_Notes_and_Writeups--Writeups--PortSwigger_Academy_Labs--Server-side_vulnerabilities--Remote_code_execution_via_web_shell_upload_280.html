@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Remote code execution via web shell upload</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Remote code execution via web shell upload</h1><br/><p><ol><li>Provided with blog website and credentials “wiener:peter”</li><li>Logged in with provided credentials</li><li>Created PHP script: &lt;?php echo file_get_contents(&#39;/home/carlos/secret&#39;); ?&gt;</li><li>Uploaded script to avatar upload: </li></ol><img src="images/280-1.png" alt="images/280-1.png" /><ol><li>Navigated back to my account</li><li>Opened avatar in new tab</li><li>Obtained secret and uploaded to complete lab successfully: </li></ol><img src="images/280-2.png" alt="images/280-2.png" /></p></div>
+</body>
+</html>
