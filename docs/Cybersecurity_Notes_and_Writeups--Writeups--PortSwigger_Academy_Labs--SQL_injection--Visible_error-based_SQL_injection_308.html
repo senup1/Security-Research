@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Visible error-based SQL injection</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Visible error-based SQL injection</h1><br/><p><ol><li>Provided with storefront website, told there is a table called users containing columns username and password, told to find password for user administrator and sign in</li><li>Appended &#39; to cookie TrackingId</li><li>This caused an error specifying there was a unterminated string literal</li><li>Appended &#39;--</li><li>Error no longer appeared</li><li>Appended ‘AND CAST((SELECT username FROM users) AS int)--</li><li>Full added query was cut off in error results</li><li>Removed orginal TrackingId value</li><li>Error message specified it is expecting bool value</li><li>Changed AS int to AS bool</li><li>Error message specified it had an issue with more than one row being returned</li><li>Added LIMIT 1 after users in select subquery</li><li>Error leaked that first user is administrator</li><li>Changed SELECT username to SELECT password</li><li>Discovered credentials “administrator:ekm6388ome2psxtnoecp”</li><li>Logged in with credentials and completed lab successfully: </li></ol><img src="images/308-1.png" alt="images/308-1.png" /></p></div>
+</body>
+</html>

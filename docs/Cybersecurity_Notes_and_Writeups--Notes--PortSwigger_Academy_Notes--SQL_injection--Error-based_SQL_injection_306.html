@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Error-based SQL injection</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Error-based SQL injection</h1><br/><p>Error-based SQLi refers to cases where one is able to use error messages to either extract/infer data from the db even in blind contexts.</p><p></p><p>The method to accomplish this would be causing a conditional error that only displays if its either true or false.</p><p>Example: ‘ AND (SELECT CASE WHEN (1=2) THEN 1/0 ELSE ’a&#39; END)=&#39;a</p><p></p><p>There may be times when error messages that are displayed are verbose and leak more information that may be helpful to an attacker.</p><p>One way to acheive this is to use the CAST() function.</p><p>Example: &#39; AND CAST((SELECT blank_column FROM blank_table) AS int)</p></div>
+</body>
+</html>

