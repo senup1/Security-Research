@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>SQL injection in different contexts</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>SQL injection in different contexts</h1><br/><p>SQL injection attacks may be processed in any controllable input.</p><p>For examples some websites take input in JSON or XML format.</p><p>These different formats may provide different ways to obfuscate attacks that are otherwise blocked.</p><p>Example in XML:</p><p>&lt;stockCheck&gt;</p><p>	&lt;productId&gt;123&lt;/productId&gt;</p><p>	&lt;storeId&gt;999 &amp;#x53;ELECT * FROM information_schema.tables&lt;/storeId&gt;</p><p>&lt;/stockCheck&gt;</p></div>
+</body>
+</html>
