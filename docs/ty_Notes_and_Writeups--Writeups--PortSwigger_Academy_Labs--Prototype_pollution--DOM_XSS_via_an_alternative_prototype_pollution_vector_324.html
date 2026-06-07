@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>DOM XSS via an alternative prototype pollution vector</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>DOM XSS via an alternative prototype pollution vector</h1><br/><p><ol><li>Provided with blog website, told to find source vulnerable to prototype pollution and use it to alert on page</li><li>Appending /?__proto__[foo]=bar to URL query</li><li>Opened console in Inspector</li><li>Entered Object.prototype in console</li><li>foo: “bar” was not added to the prototype</li><li>Tried /?__proto__.foo=bar appended to URL query</li><li>Entered Object.prototype in console</li><li>foo: “bar” present in prototype</li><li>Checked Sources under Debugger section for .js files</li><li>After inspecting .js files available, noticed searchLoggerAlternative.js contains manager.sequence property without defining it by default</li><li>Tried payload /?__proto__.sequence=alert(1)</li><li>Console in Inspector showed error on eval line</li><li>Added breakpoint and refreshed page</li><li>Sequence value is being set to alert(1)1 (extra one is appended to end)</li><li>Tried again with /?__proto__.sequence=alert(1)- (dash appended to end to comment out other 1)</li><li>Completed lab successfully: </li></ol><img src="images/324-1.png" alt="images/324-1.png" /></p></div>
+</body>
+</html>

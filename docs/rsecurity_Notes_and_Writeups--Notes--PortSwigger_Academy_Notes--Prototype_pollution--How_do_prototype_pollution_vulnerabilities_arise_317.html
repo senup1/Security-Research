@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>How do prototype pollution vulnerabilities arise?</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>How do prototype pollution vulnerabilities arise?</h1><br/><p>Prototype pollution vulnerabilities typically arise when a JavaScript function recursively merges an object containing user-controlled properties into an existing object without sanitizing keys.</p><p></p><p>Successful exploitation requires the following components:<ul><li>A prototype pollution source - any input that enables you to poison prototype objections</li><li>A sink - a JavaScript function or DOM element that enables arbitrary code execution</li><li>An exploitable gadget - any property that is passed into a sink without filtering or sanitization</li></ul></p></div>
+</body>
+</html>
