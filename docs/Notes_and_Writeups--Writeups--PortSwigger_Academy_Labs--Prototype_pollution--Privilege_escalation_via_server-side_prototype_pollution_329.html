@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Privilege escalation via server-side prototype pollution</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Privilege escalation via server-side prototype pollution</h1><br/><p><ol><li>Provided with storefront website, told to use prototype pollution to escalte privelages and delete user carlos on admin panel, provided credentials “wiener:peter”</li><li>Navigated to /my-account</li><li>Logged in with provided credentials</li><li>Launched burpsuite and interecepted request to update billing/delivery address</li><li>Noticed JSON in POST request that was intercepted</li><li>Appended , “__proto__”:{&quot;foo&quot;:&quot;bar&quot;} to JSON in request and sent</li><li>“foo”:&quot;bar&quot; was present in response to request showing that it is vulnerable to pollution</li><li>Also noticed isAdmin parameter was present in response to request and set to false</li><li>Modified request to contain ,&quot;__proto__&quot;:{&quot;foo&quot;:&quot;bar&quot;,&quot;isAdmin&quot;:true} and sent</li><li>isAdmin was set to true in response</li><li>Turned off intercept and sent request again</li><li>Navigated to home of website</li><li>Navigated to /admin</li><li>Deleted user carlos and completed lab successfully: </li></ol><img src="images/329-1.png" alt="images/329-1.png" /></p></div>
+</body>
+</html>

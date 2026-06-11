@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Client-side prototype pollution via browser APIs</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Client-side prototype pollution via browser APIs</h1><br/><p><ol><li>Provided with a blog website and told to use prototype pollution to call alert()</li><li>Clicked search button and noticed URL query</li><li>Tried entering /?__proto__[foo]=bar</li><li>Checked Object.prototype in Developer Console. Showed foo: “bar” was added</li><li>Looked through presetn .js files</li><li>Noticed the use of Object.defineProperty to prevent tampering with transport_url in searchLoggerConfigurable.js</li><li>Noticed Object.defineProperty  is missing value property being set</li><li>Tried /?__proto__[value]=data:,alert(document.cookie);</li><li>Successfully alerted cookie and completed lab: </li></ol><img src="images/327-1.png" alt="images/327-1.png" /></p></div>
+</body>
+</html>

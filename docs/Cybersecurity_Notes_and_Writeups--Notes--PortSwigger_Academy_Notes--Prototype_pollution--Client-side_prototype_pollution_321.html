@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Client-side prototype pollution</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Client-side prototype pollution</h1><br/><p>Finding prototype pollution is a case of trial and error.<ol><li>Try injecting an arbitrary property via the query string, URL fragment, and any JSON input. Ex: website.com/?__proto__[foo]=bar</li><li>In the browser console, inspect Object.prototype to see if pollution was successful. Ex: Object.prototype.foo //prints bar if successful and undefined otherwise</li><li>If the property was not added, try dot notation instead</li><li>Repeat with each potential source</li></ol></p><p></p><p></p><p>Once a vulnerable source is identified, the next step is to find a usable gadget to use for an exploit.<ol><li>Look through the source code and identify any properties that are used by the application or any libraries that it imports.</li></ol></p><p></p><p>Some may attempt to block the access of prototype pollution by stripping any properties with the __proto__ key from user controlled objects. This approach is flawed as there are other ways of referencing Object.prototype without relying on __proto__.</p><p>Unless its property is set to null, every object has a constructor property which references the constructor method that was used to create it.</p><p>Every constructor function has a prototype property.</p><p>Constructors can be referenced like so: myObject.constructor. So its prototype would be myObject.constructor.prototype.</p><p></p><p>Another method one might try is santizing input. If done correctly this may be a good solution. However with weak sanitization there is still room for exploitation. An example would be a lack of recursive checking if the only santization was removing __proto__ from input. Ex: __pro__proto__to__ would still go through as __proto__ since only one of the __proto__s would be stripped.</p><p></p></div>
+</body>
+</html>

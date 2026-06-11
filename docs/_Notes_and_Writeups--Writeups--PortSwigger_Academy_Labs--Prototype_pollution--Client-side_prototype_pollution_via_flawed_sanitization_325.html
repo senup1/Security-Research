@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Client-side prototype pollution via flawed sanitization</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Client-side prototype pollution via flawed sanitization</h1><br/><p><ol><li>Provided with a blog website and told to use prototype pollution to call alert()</li><li>Clicked search button and noticed URL query</li><li>Tried /?__proto__[foo]=bar and /?__proto__.foo=bar as tests</li><li>Entered Object.prototype in Developer Console. It showed no changes</li><li>Checked JavaScript files in Sources section of Debugger</li><li>Located sanitization in serachLoggerFiltered.js: </li></ol><img src="images/325-1.png" alt="images/325-1.png" /><ol><li>Tried inserting additional badProperties into statement to counter sanitization: /?constconstructorructor[protprototypeotype][foo]=bar</li><li>Now the sanitization has been bypassed and Object.prototype returns foo = “bar”</li><li>After further investigation in serachLoggerFiltered.js, discovered config.transport_url is being used without being initialized by default in the config object</li><li>Tried /?consconstructortructor[protprototypeotype][transport_url]=data:,alert(1);</li><li>Alert occured and completed lab successfully: </li></ol><img src="images/325-2.png" alt="images/325-2.png" /></p></div>
+</body>
+</html>

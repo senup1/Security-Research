@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Prototype pollution via browser APIs</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Prototype pollution via browser APIs</h1><br/><p>Prototype pollution may also be possible through browser APIs. An example of this is the Fetch API.</p><p>The fetch() method accepts two arguments: URL to send request to, and an object that lets you control parts of the request such as the method, headers, body, parameters, etc.</p><p>Example of how one might send  a POST request using fetch():</p><p>fetch(&#39;https://website.com/account/change-email&#39;, {</p><p>	method: ‘POST’,</p><p>	body: ‘user=carlos&amp;email=carlos%40gmail.com’</p><p>})</p><p>Since only the method and body properties were explicitly defined, an attacker may be able to pollute Object.prototype with their own headers property.</p><p>If the headers were added after the instantiation of the object, then they would still be exploitable.</p><p>For example if there was a let username = data[&#39;x-username&#39;] after the object instantiation, a payload such as ?__proto__[headers][x-username]=&lt;img/src/onerror=alert(1)&gt; would be able to execute.</p><p>Another way developers may try to prevent prototype pollution is through the use of the Object.defineProperty() method. This method enables you to set a non-configurable, non-writeable property directly on the affected object.</p><p>This approach is also flawed as it contains an object known as a descriptor. If this object is not set properly, an attacker may be able to bypass the defense by polluting Object.prototype with a malicious value property that would be passed to Object.defineProperty().</p><p>A good method for prototype pollution may be to google what properties an object can have.</p><p>For example, when doing this with Object.defineProperty() you may discover that there is a value property that accepts any type (bool, string, etc).</p></div>
+</body>
+</html>

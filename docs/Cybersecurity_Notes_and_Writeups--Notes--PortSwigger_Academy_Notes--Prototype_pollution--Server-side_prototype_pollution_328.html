@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Server-side prototype pollution</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Server-side prototype pollution</h1><br/><p>Server-side prototype pollution is much harder to detect than client side.</p><p>POST or PUT requests that submit JSON data are good targets as they often respond with a JSON representation fo the new or updated object.</p><p>Any features that involve updating user data are worth investigating as these often involve merging the incoming data into existing user objects.</p></div>
+</body>
+</html>
