@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Bypassing flawed input filters for server-side prototype pollution</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Bypassing flawed input filters for server-side prototype pollution</h1><br/><p><ol><li>Provided with storefront website, told to use prototype pollution to escalate privelages and delete user carlos on admin panel, provided credentials “wiener:peter”</li><li>Logged in using provided credentials</li><li>Intercepted billing and delivery address update request using burpsuite</li><li>Noticed modifiable JSON in request</li><li>Tried appending aribitrary property and value “role”:&quot;foo&quot; and sent</li><li>Response contained new property</li><li>Tried “__proto__”:{&quot;json spaces&quot;:10} and sent</li><li>No changes were visible in raw Response JSON</li><li>Tried “constructor”:{&quot;prototype&quot;:{&quot;json spaces&quot;:10}} and sent</li><li>Resulting response contained new spacing</li><li>Used “constructor”:{&quot;prototype&quot;:{&quot;isAdmin&quot;:true}} and sent</li><li>Navigate to home</li><li>Navigated to admin panel</li><li>Deleted user carlos and successfully completed lab: </li></ol><img src="images/331-1.png" alt="images/331-1.png" /></p></div>
+</body>
+</html>

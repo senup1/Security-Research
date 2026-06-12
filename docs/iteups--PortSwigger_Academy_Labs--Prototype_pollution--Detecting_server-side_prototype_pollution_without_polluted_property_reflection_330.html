@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Detecting server-side prototype pollution without polluted property reflection</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Detecting server-side prototype pollution without polluted property reflection</h1><br/><p><ol><li>Provided with storefront website, told to use prototype pollution to change server behavior, provided credentials “wiener:peter”</li><li>Logged in using provided credentials</li><li>Intercepted billing and delivery address update request using burpsuite</li><li>Noticed visible JSON in request</li><li>Appended arbitrary property with string encoded in UTF-7</li><li>Resulting HTTP response contained string still in UTF-7: </li></ol><img src="images/330-1.png" alt="images/330-1.png" /><ol><li>Replaced arbitrary property addition with “__proto__”:{ “content-type&quot;:&quot;application/json; charset=utf-7&quot;} and sent</li><li>Changed back to addition of role: “+AGYAbwBv-” and sent</li><li>Returned HTTP response contained decoded version of text and successfully solved lab: </li></ol><img src="images/330-2.png" alt="images/330-2.png" /></p></div>
+</body>
+</html>
