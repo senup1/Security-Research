@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Remote code execution via server-side prototype pollution</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Remote code execution via server-side prototype pollution</h1><br/><p><ol><li>Provided with storefront website, told to use prototype pollution to delete file through RCE, provided credentials “wiener:peter”</li><li>Logged in using provided credentials</li><li>Intercepted billing and delivery address update request using burpsuite</li><li>Noticed JSON in request</li><li>Appended “foo”:&quot;bar&quot; as test</li><li>Noticed response included test parameter entered</li><li>Tried “__proto__”:{&quot;json spaces&quot;:10}</li><li>Raw response contained new spacing proving pollution possible</li><li>Navigated to admin panel</li><li>Interecepted run maintenance jobs request in burpsuite</li><li>Noticed potential use of execArgv in tasks parameter: </li></ol><img src="images/332-1.png" alt="images/332-1.png" /><ol><li>In orginal intercepted request tried “__proto__”:{&quot;execArgv&quot;:[&quot;--env=require(&#39;child_process&#39;).execSync(&#39;rm /home/carlos/morale.txt&#39;)&quot;]}</li><li>Successfully deleted file and completed lab: </li></ol><img src="images/332-2.png" alt="images/332-2.png" /></p></div>
+</body>
+</html>

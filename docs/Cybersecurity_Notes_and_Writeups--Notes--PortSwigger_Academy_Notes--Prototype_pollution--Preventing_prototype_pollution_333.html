@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Preventing prototype pollution</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Preventing prototype pollution</h1><br/><p><ol><li>Santizing property keys (use a whitelist for allowed properties)</li><li>Prevent prototype objects from being changed<ol><li>Invoke Object.freeze() on objects to ensure its properties can no longer be modified</li><li>Object.seal() is another option that instead only allows you to change exisiting properties</li></ol></li><li>Create null object and set it as the object&#39;s prototype to prevent gadgets</li></ol></p></div>
+</body>
+</html>
