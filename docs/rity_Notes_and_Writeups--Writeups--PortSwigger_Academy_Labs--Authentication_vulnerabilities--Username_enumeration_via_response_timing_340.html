@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Username enumeration via response timing</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Username enumeration via response timing</h1><br/><p><ol><li>Provided with blog website, username and password wordlists, given credentials “wiener:peter&quot;, told to brute force login another user</li><li>Navigated to /login</li><li>Intercepted login attempt with credentials “test:test” in burpsuite</li><li>Forwarded to Intruder and added positions around username field</li><li>Added X-Forwarded-For: 1 header to prevent ip blocking</li><li>Added positions around 1 for X-Forwarded-For header</li><li>Used pitchfork attack with provided username wordlist and 1-100 for header</li><li>Discovered pi as username</li><li>Set username to pi and used provided password wordlist in password position</li><li>Only one request had 302 status</li><li>Discovered credentials “pi:666666”</li><li>Logged in and successfully completed lab: </li></ol><img src="images/340-1.png" alt="images/340-1.png" /></p></div>
+</body>
+</html>

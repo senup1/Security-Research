@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Broken brute-force protection, IP block</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Broken brute-force protection, IP block</h1><br/><p><ol><li>Provided with blog website, valid login credentials “wiener:peter”, target username “carlos”, and password wordlist</li><li>Intercepted login request with credentials “test:test” in burpsuite</li><li>Added positions around username and password sections</li><li>Set payload for username to carlos/wiener alternating 100 times</li><li>Set password payload to provided password wordlist with peter as every other password</li><li>Only one 302 contained carlos as username</li><li>Discovered credentials “carlos:nicole”</li><li>Logged in and completed lab successfully: </li></ol><img src="images/341-1.png" alt="images/341-1.png" /></p></div>
+</body>
+</html>

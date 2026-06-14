@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Username enumeration via account lock</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Username enumeration via account lock</h1><br/><p><ol><li>Provided with blog website, username wordlist, password wordlist</li><li>Intercepted login request with credentials “test:test” in burpsuite</li><li>Added positions around username and password sections</li><li>Set payload for username to provided username wordlist but modified to repeat each username four times</li><li>Set password to test and ran clusterbomb attack</li><li>Discovered username app01 as it was the only response with a different length</li><li>Set username to app01 and used provided password wordlist for password payload</li><li>Discovered credentials “app01:letmein”</li><li>Logged in and completed lab successfully: </li></ol><img src="images/342-1.png" alt="images/342-1.png" /></p></div>
+</body>
+</html>

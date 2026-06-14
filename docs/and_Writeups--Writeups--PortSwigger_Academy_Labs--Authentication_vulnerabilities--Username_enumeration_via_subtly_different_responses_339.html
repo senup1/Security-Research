@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Username enumeration via subtly different responses</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Username enumeration via subtly different responses</h1><br/><p><ol><li>Provided with blog website, username and password wordlists, told to brute force login</li><li>Navigated to /login</li><li>Intercepted login attempt with credentials “test:test” in burpsuite</li><li>Forwarded to Intruder and added positions around username field</li><li>Added grep search for “Invalid username or password.”</li><li>Used provided username wordlist as payload and started attack</li><li>Only one request did not have the grep search due to a missing period in the phrase grepped for</li><li>Discovered username is auto</li><li>Set username to auto and switched positions to be around test in password field</li><li>Set payload to provided password wordlist and started attack</li><li>Grepped results for “Invalid username or password”</li><li>Only one did not contain “Invalid username or password”</li><li>Found credentials “auto:batman”</li><li>Logged in and successfully completed lab: </li></ol><img src="images/339-1.png" alt="images/339-1.png" /></p></div>
+</body>
+</html>
