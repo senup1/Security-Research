@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Brute-forcing a stay-logged-in cookie</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Brute-forcing a stay-logged-in cookie</h1><br/><p><ol><li>Provided with blog website, credentials “wiener:peter”, target username “carlos”, password wordlist</li><li>Intercepted login request using provided credentials and stay signed in checkbox selected</li><li>Noticed stay-logged-in header</li><li>Tried decoding from base64 using cyberchef</li><li>Resulting text showed wiener:51dc30ddc473d43a6011e9ebba6ca770</li><li>Used hash-identifier on 51dc30ddc473d43a6011e9ebba6ca770</li><li>Discovered it as md5 hash</li><li>Checked with peter hashed to md5 and it matched</li><li>Used cat wordlist.txt | xargs -I {} bash -c ‘echo -n “{}” | md5sum’ &gt; wordlisthashed.txt to convert provided password wordlist to md5 version of each password</li><li>Prepended carlos: to each hash in hashed wordlist</li><li>Used cat wordlisthashed.txt | xargs -I {} bash -c ‘echo -n “{}” | base64’ &gt; wordlist.txt to convert each line to base64</li><li>Forwarded request to Intruder</li><li>Logged out</li><li>Changed id from wiener to carlos and set positions around stay-logged-in header value</li><li>Set payload to base64 encoded list and started attack</li><li>Completed lab successfully: </li></ol><img src="images/345-1.png" alt="images/345-1.png" /></p></div>
+</body>
+</html>
