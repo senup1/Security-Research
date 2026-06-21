@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>CSRF where token is tied to non-session cookie</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>CSRF where token is tied to non-session cookie</h1><br/><p><ol><li>Provided with blog website, credentials “wiener:peter&quot; and “carlos:montoya”, told to use provided exploit server to host HTML page that uses CSRF attack to change viewers email</li><li>Logged in with provided credentials</li><li>Intercepted change email request in burpsuite and dropped request after copying session key</li><li>Intercepted search request and modified search query to: GET /?search=test%0d%0aSet-Cookie%3a+csrfKey=B1iTM6DT08UcYBaIUQmq2ZWOtK7flbB2%3b%20SameSite=None</li><li>Made custom CSRF exploit payload in body section of exploit server: </li></ol><img src="images/368-1.png" alt="images/368-1.png" /><ol><li>Delivered exploit to victim and completed lab successfully: </li></ol><img src="images/368-2.png" alt="images/368-2.png" /></p><p></p></div>
+</body>
+</html>

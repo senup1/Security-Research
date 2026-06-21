@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>CSRF where token validation depends on request method</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>CSRF where token validation depends on request method</h1><br/><p><ol><li>Provided with blog website, credentials “wiener:peter&quot;, told to use provided exploit server to host HTML page that uses CSRF attack to change viewers email</li><li>Logged in with provided credentials</li><li>Intercepted change email request in burpsuite</li><li>Copied full request and used csrfshark.github.io/app to convert to usable CSRF form HTML</li><li>Pasted into body section on provided exploit server after modifying POST to GET: </li></ol><img src="images/365-1.png" alt="images/365-1.png" /><ol><li>Delivered exploit to victim and completed lab successfully: </li></ol><img src="images/365-2.png" alt="images/365-2.png" /></p></div>
+</body>
+</html>
