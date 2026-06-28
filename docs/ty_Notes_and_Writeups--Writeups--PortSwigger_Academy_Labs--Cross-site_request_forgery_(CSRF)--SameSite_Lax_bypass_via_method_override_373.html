@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>SameSite Lax bypass via method override</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>SameSite Lax bypass via method override</h1><br/><p><ol><li>Provided with blog website, credentials “wiener:peter”, told to use CSRF attack to change victim&#39;s email address.</li><li>Logged in with provided credentials</li><li>Intercepted update email request in burpsuite</li><li>Copied request and pasted into csrfshark.github.io/app</li><li>Modified resulting form code and pasted into body section of provided exploit server: </li></ol><img src="images/373-1.png" alt="images/373-1.png" /><ol><li>After setting method to GET to bypass default lax SameSite setting (SameSite was not set manually) recieved warning “method not allowed”</li><li>Added new hidden input of name _method and set to POST to meet method requirements: </li></ol><img src="images/373-2.png" alt="images/373-2.png" /><ol><li>Completed lab successfully: </li></ol><img src="images/373-3.png" alt="images/373-3.png" /></p></div>
+</body>
+</html>
