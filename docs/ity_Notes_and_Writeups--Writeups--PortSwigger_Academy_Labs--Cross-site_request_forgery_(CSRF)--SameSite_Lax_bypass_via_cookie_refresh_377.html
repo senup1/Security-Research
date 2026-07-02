@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>SameSite Lax bypass via cookie refresh</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>SameSite Lax bypass via cookie refresh</h1><br/><p><ol><li>Provided with blog website, credentials “wiener:peter”, told to change the victim&#39;s email address</li><li>Logged in with provided credentials</li><li>Intercepted requests during login process using burpsuite</li><li>Noticed when logging out and back it, /social-login redirects to the beginning of oauth process immediately</li><li>Intercepted change email request</li><li>Used csrfshark.github.io/app to convert to generic csrf attack</li><li>Modified and pasted template into provided exploit server body: </li></ol><img src="images/377-1.png" alt="images/377-1.png" /><ol><li>Delivered exploit to victim and completed lab successfully: </li></ol><img src="images/377-2.png" alt="images/377-2.png" /></p></div>
+</body>
+</html>

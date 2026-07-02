@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Bypassing SameSite Lax restrictions with newly issued cookies</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Bypassing SameSite Lax restrictions with newly issued cookies</h1><br/><p>Cookies with Lax SameSite restrictions can be sent in POST requests on some occasions.</p><p></p><p>An example of this is the default Chrome Lax not being enforced on POST requests for the first 120 seconds.</p><p>This is done in order to prevent breaking the functionality of SSO mechanisms.</p><p></p><p>Browsers only allow popup tabs after manual interaction from a user, so wrap any window.open() in window.onclick to count it as user interacted.</p></div>
+</body>
+</html>

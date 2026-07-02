@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>CSRF where Referer validation depends on header being prese</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>CSRF where Referer validation depends on header being prese</h1><br/><p><ol><li>Provided with blog website, credentials “wiener:peter”, told to change the viewer&#39; email.</li><li>Logged in with provided credentials</li><li>Intecepted update email request using burpsuite</li><li>Pasted request into csrfshark.github.io/app</li><li>Modified request to function properly and pasted into body section of provided exploit server</li><li>Tried viewing exploit and got Invalid referer header error</li><li>Added meta tag to not modify referer header: </li></ol><img src="images/378-1.png" alt="images/378-1.png" /><ol><li>Delivered to victim and completed lab successfully: </li></ol><img src="images/378-2.png" alt="images/378-2.png" /></p></div>
+</body>
+</html>
