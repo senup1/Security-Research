@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Using delimiter discrepancies</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Using delimiter discrepancies</h1><br/><p>It is possible for different frameworks to use different delimiters.</p><p></p><p>To test for delimiter vulnerabilities, first identify what delimeter is being used.</p><p>Add an arbitrary string to the end of the URL without adding a /. If the response is identical to the original response, the request is being redirected and a different endpoint needs to be used to test.</p><p>Next add a possible delimiter between the original path and the arbitrary string. If the response is identical to the base response, the delimiter chosen was correct. If the server interperets the path with the delimiter included as part of the URL then it is incorrect.</p><p>After identifying the delimiter, add a static extension to the end of the path. </p><p></p><p>It is best to use a list of possible delimiters and list of possible extensions.</p><p></p><p>In the list of possible delimiters make sure to include encoded and decoded delimiter characters. Also include encoded non-printable characters.</p></div>
+</body>
+</html>

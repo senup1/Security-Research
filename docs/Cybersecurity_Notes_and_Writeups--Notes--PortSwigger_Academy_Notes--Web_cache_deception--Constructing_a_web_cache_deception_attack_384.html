@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Constructing a web cache deception attack</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Constructing a web cache deception attack</h1><br/><p>Constructing a web cache attack typically involves the following steps:<ol><li>Identify target endpoint that returns dynamic response containing sensitive information. Prioritize GET, HEAD, or OPTIONS supported endpoints as modifying methods like POST are typically not cached as they are dynamic.</li><li>Identify a discrepancy in how the cache and origin server parse the URL path.</li><li>Craft a URL that abuses the discrepancy to trick the cache into storing a dynamic response.</li></ol></p><p></p><p></p><p>Remember to change requests by modifying any query parameter on each send as if this is not done, cached responses might be served rather than origin server content. This can be automated using the Param miner extension in burpsuite</p><p></p><p>The X-Cache header provides details on the cache status of the resource being accessed.</p><p>Cache-Control may also be relevant but doesn&#39;t always indicate caching is occuring.</p><p>Response time differences in requests can also be a way to detect accessing a cached resource vs directly from the origin server.</p></div>
+</body>
+</html>
