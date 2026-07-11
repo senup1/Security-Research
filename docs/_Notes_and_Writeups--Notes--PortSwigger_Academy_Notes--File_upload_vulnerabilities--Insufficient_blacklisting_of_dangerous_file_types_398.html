@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Insufficient blacklisting of dangerous file types</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Insufficient blacklisting of dangerous file types</h1><br/><p>File extensions like .php5, .shtml, etc. may not be blacklisted if the list is not thorough.</p><p></p><p>Devs may also try preventing execution by setting their config to prevent it.</p><p>For example, on an Apache server there is config by default at /etc/apache2/apache2.conf</p><p>If this is modified to contain: LoadModule php_module /usr/lib/apache2/modules/libphp.so</p><p>    AddType application/x-httpd-php .php</p><p>Then it would allow execution.</p><p>Apache servers also sometimes contain .htaccess config files for directory specific config.</p><p></p><p>Changing the .htaccess or apache2.conf to accept php files under a different MIME type may be able to bypass restrictions on weaker websites.</p><p></p><p>Discovering what web server is being used, what config files are default on the server, and modifying/making use of them should be the priority.</p><p></p><p>Obfuscating the file extension is another method to circumvent protections.</p><p>Some methods:</p><p>.pHp (capitalization)</p><p>.php.jpg (extra extensions)</p><p>.php. (trailing characters)</p><p>%2Ephp (encoded .)</p><p>.php;.jpg (adding semicolon before second extension)</p><p>.php%00.jpg (adding null byte before second extension)</p><p>.p.phphp (target non recursive stripping)</p></div>
+</body>
+</html>

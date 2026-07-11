@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Web shell upload via obfuscated file extension</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Web shell upload via obfuscated file extension</h1><br/><p><ol><li>Provided with blog website, credentials “wiener:peter”, told to obtain secret contained in /home/carlos/secret</li><li>Logged in with provided credentials</li><li>Tried uploading thing.pHp. Got error Sorry, only JPG &amp; PNG files are allowed</li><li>Tried uploading thing.php%00.jpg, thing.php.jpg, thing.php;.jpg</li><li>Navigated to /files/avatars/thing.php and discovered secret</li><li>Submitted secret and completed lab successfully: </li></ol><img src="images/400-1.png" alt="images/400-1.png" /></p></div>
+</body>
+</html>

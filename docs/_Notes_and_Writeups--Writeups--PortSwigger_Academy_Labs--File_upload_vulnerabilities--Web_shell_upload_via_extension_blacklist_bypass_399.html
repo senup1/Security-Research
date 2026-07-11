@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Web shell upload via extension blacklist bypass</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Web shell upload via extension blacklist bypass</h1><br/><p><ol><li>Provided with blog website, credentials “wiener:peter”, told to obtain secret contained in /home/carlos/secret</li><li>Logged in with provided credentials</li><li>Tried uploading php file to echo contents of target file. Error saying php files are not allowed</li><li>Discovered server is using Apache/2.4.41</li><li>Uploaded .htaccess file containing AddType application/x-httpd-php .exploit</li><li>Uploaded exploit.exploit containing php to get target file contents</li><li>Opened profile picture in new tab and discovered secret</li><li>Submitted discovered secret and completed lab successfully: </li></ol><img src="images/399-1.png" alt="images/399-1.png" /></p></div>
+</body>
+</html>
