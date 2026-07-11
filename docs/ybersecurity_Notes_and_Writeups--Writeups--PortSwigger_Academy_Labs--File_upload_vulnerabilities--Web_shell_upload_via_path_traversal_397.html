@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Web shell upload via path traversal</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Web shell upload via path traversal</h1><br/><p><ol><li>Provided with blog website, credentials “wiener:peter”, told to obtain secret contained in /home/carlos/secret</li><li>Logged in with provided credentials</li><li>Created .php file containing &lt;?php echo file_get_contents(&#39;/home/carlos/secret&#39;); ?&gt;</li><li>Uploaded file as profile picture at /my-account</li><li>Intercepted upload request in burpsuite and modified Content-Type to image/png</li><li>Navigated to /files/avatars/thing.php and discovered file was printing and not be executed</li><li>Changed filename field to ..%2fthing.php in intercepted request and sent</li><li>Navigated to /files/thing.php and discovered user carlos&#39; secret</li><li>Submitted secret and completed lab successfully: </li></ol><img src="images/397-1.png" alt="images/397-1.png" /></p></div>
+</body>
+</html>

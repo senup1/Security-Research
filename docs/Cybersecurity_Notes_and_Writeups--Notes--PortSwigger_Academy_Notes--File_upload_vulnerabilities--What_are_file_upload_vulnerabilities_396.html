@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>What are file upload vulnerabilities?</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>What are file upload vulnerabilities?</h1><br/><p>File upload vulnerabilities are whena web server allows users to upload files without validating them to be safe.</p><p></p><p>Some cases will automatically execute the uploaded file while others will require a follow up HTTP request for the file.</p><p></p><p></p><p>Some PHP one liners:</p><p>&lt;?php echo file_get_contents(&#39;/path/to/target/file&#39;); ?&gt;</p><p>&lt;?php echo system($_GET[&#39;command&#39;]); ?&gt;</p><p></p><p>Web servers often use the filename field in multipart/form-data requests to determine the name and lcoation where the file should be saved.</p></div>
+</body>
+</html>
