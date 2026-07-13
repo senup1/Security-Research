@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Partial construction race conditions</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Partial construction race conditions</h1><br/><p>Many applications create objects in multiple steps. For example an application may create a user in the database before creating the user&#39;s API key and including it as part of the object for the user. This creates a moment of time where the user&#39;s API key is uninitialized. During that window, you could potentially make authenticated API requests without using an API key.</p></div>
+</body>
+</html>

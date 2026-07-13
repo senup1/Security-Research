@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Time-sensitive attacks</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Time-sensitive attacks</h1><br/><p>Example: requesting a password reset token that is created based on time stamps</p><p>	If multiple requests are made during the same time stamp, it is possible to create password reset links for multiple accounts using the same token.</p><p>	</p><p>Websites that use PHP backends may only be able to process one request at a time per session. To circumvent this, obtain multiple valid sessions (and potentially also csrf tokens) to send multiple requests simlutaneously rather than sequentially.</p></div>
+</body>
+</html>

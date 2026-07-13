@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Limit overrun race conditions</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Limit overrun race conditions</h1><br/><p>Race conditions occur when something that authorized n times is able to occur n+x times due to it being repeated before the time it takes to iterate n is complete.</p><p>An example: Using a one time only discount code at checkout on an online store where two people try to apply the discount/checkout at the exact same time.</p><p></p><p>Here are some more varaitions of this attack:<ul><li>Reedeming a gift card multiple times</li><li>Rating a product multiple times</li><li>Withdrawing/transferring cash in excess of account balance</li><li>Reusing a single CAPTCHA solution</li><li>Bypassing an anti-brute-force rate limit</li></ul></p></div>
+</body>
+</html>

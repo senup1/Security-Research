@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Bypassing rate limits via race conditions</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Bypassing rate limits via race conditions</h1><br/><p><ol><li>Provided with storefront website, credentials “wiener:peter”, told to bypass rate limit and brute force the password for user carlos</li><li>Intercepted log in attempt with provided credentials in burpsuite</li><li>Forwarded request to turbo intruder</li><li>Set username to carlos and set payload for password to provided password wordlist</li><li>Used custom python to target wordlist location properly: </li></ol><img src="images/421-1.png" alt="images/421-1.png" /><ol><li>Started attack and discovered password</li><li>Logged in with discovered credentials “carlos:1234567890”</li><li>Deleted user carlos and completed lab successfully: </li></ol><img src="images/421-2.png" alt="images/421-2.png" /></p></div>
+</body>
+</html>
