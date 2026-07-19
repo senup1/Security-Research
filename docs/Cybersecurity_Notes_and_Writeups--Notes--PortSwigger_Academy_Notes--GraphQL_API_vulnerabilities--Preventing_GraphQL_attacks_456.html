@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Preventing GraphQL attacks</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Preventing GraphQL attacks</h1><br/><p><ul><li>If API is not intended for public use, disable introspection on it</li><li>Review the API&#39;s schema and make sure it doesn&#39;t expose unintended fields to the public</li><li>Disable suggestions</li><li>Make sure it doesn&#39;t expose any private user fields</li></ul></p><p></p><p>For brute-force attacks specifically:<ul><li>Limit query depth</li><li>Configure operation limits</li><li>Configure maxiumum byte limits</li><li>Consider implementing cost analysis for recieved queries. If the query&#39;s resource cost is too high it will be dropped</li></ul></p><p></p><p>For CSRF specifically:<ul><li>Only accept JSON over POST</li><li>API validates content provided matches type</li><li>Implement CSRF token mechanism</li></ul></p></div>
+</body>
+</html>

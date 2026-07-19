@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Accidental exposure of private GraphQL fields</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Accidental exposure of private GraphQL fields</h1><br/><p><ol><li>Provided with blog website, told to discover admin credentials and delete user carlos</li><li>Intercepted view post and login attempt requests in burpsuite</li><li>Noticed they both use /graphql/v1</li><li>Used custom introspection statement: {</li></ol></p><p>  &quot;query&quot;: &quot;query { __schema { queryType { fields { name args { name type { kind name ofType { kind name } } } type { kind name ofType { kind name } } } } mutationType { fields { name args { name type { kind name ofType { kind name } } } type { kind name ofType { kind name } } } } types { name kind fields { name type { kind name ofType { kind name } } } } } }&quot;</p><p>}<ol><li>Discovered getUser, password, username, and more interesting custom types</li><li>Modified original getBlogPost query in original request to target getUser type and return username and password for specified id: </li></ol><img src="images/449-1.png" alt="images/449-1.png" /><ol><li>After iterating through a few ids manually, discovered administrator password</li><li>Logged in with credentials “administrator:a33vgnwta9151w4hp93f”</li><li>Navigated to /admin</li><li>Deleted user carlos and completed lab successfully: </li></ol><img src="images/449-2.png" alt="images/449-2.png" /></p></div>
+</body>
+</html>

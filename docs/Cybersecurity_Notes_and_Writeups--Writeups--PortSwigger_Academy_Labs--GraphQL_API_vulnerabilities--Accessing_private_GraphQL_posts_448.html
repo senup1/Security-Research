@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Accessing private GraphQL posts</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Accessing private GraphQL posts</h1><br/><p><ol><li>Provided with blog website, told to find hidden blog post with password</li><li>Intercepted view post request on burpsuite</li><li>Discovered /graphql/v1 endpoint</li><li>Used custom introspection statement: {</li></ol></p><p>  &quot;query&quot;: &quot;query { __schema { queryType { fields { name args { name type { kind name ofType { kind name } } } type { kind name ofType { kind name } } } } mutationType { fields { name args { name type { kind name ofType { kind name } } } type { kind name ofType { kind name } } } } types { name kind fields { name type { kind name ofType { kind name } } } } } }&quot;</p><p>}<ol><li>Discovered custom types postPassword and isPrivate in response</li><li>Looked through each post on blog website and noticed post number three is missing/skipped</li><li>Modified original request to return postPassword and isPrivate from post number three: </li></ol><img src="images/448-1.png" alt="images/448-1.png" /><ol><li>Discovered password and comleted lab successfully: </li></ol><img src="images/448-2.png" alt="images/448-2.png" /></p></div>
+</body>
+</html>

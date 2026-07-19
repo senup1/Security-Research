@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Finding a hidden GraphQL endpoint</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Finding a hidden GraphQL endpoint</h1><br/><p><ol><li>Provided with storefront website, told to discover hidden GraphQL endpoint, bypass introspection detection, and delete user carlos</li><li>Intercepted view post request and modified target to common GraphQL endpoint names</li><li>All of them except /api resulted in 404 where /api resulted in 400 and contained “query not present”</li><li>Manually set Content-Type header to application/json</li><li>Used custom introspection statement: {</li></ol></p><p>  &quot;query&quot;: &quot;query { __schema { queryType { fields { name args { name type { kind name ofType { kind name } } } type { kind name ofType { kind name } } } } mutationType { fields { name args { name type { kind name ofType { kind name } } } type { kind name ofType { kind name } } } } types { name kind fields { name type { kind name ofType { kind name } } } } } }&quot;</p><p>}<ol><li>Recieved “GraphQL introspection is not allowed, but the query contained __schema or __type”</li><li>Added new line after __schema and sent again</li><li>Discovered deleteOrganizationUser and DeleteOrganizationUserInput custom types</li><li>Modified query to make use of deleteOrganizationUser: </li></ol><img src="images/451-1.png" alt="images/451-1.png" /><ol><li>Iterated ids manually until user carlos was deleted</li><li>Completed lab successfully: </li></ol><img src="images/451-2.png" alt="images/451-2.png" /></p></div>
+</body>
+</html>

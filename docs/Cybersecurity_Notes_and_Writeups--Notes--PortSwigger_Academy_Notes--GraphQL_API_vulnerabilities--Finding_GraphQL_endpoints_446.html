@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Finding GraphQL endpoints</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Finding GraphQL endpoints</h1><br/><p>GraphQL APIs use the same endpoint for all requests.</p><p></p><p>If you send query{__typename} to any GraphQL endpoint, it will include the string {&quot;data&quot;: {&quot;__typename&quot;: “query”}} somewhere in its response. This is known as a universal query.</p><p>It is a useful tool to probe for GraphQL services.</p><p>This works because every GraphQL endpoint has a reserved field called __typename that returns the queried object&#39;s type as a string.</p><p></p><p>Here are some common GraphQL endpoints that aren&#39;t necessarily always used:</p><p>/graphql</p><p>/api</p><p>/api/graphql</p><p>/graphql/api</p><p>/graphql/graphql</p><p></p><p>The next step to find GraphQL endpoints is to test different request methods.</p><p>Typically GraphQL endpoints only accept POST requests that have a content type of application/json, however, some endpoints may accept alternative methods or content types like GET or application/x-www-form-urlencoded respectively.</p><p></p><p>Once an endpoint is discovered, send test requests to understand more of its structure.</p></div>
+</body>
+</html>

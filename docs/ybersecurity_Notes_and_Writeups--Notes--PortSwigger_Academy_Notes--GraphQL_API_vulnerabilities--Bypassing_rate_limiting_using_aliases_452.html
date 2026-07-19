@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Bypassing rate limiting using aliases</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Bypassing rate limiting using aliases</h1><br/><p>Typically GraphQL objects can&#39;t contain multiple properties with the same name.</p><p>Aliaes enable you to bypass this restriction by renaming properties.</p><p></p><p>Example of aliased queries:</p><p>query isValidDiscount ($code: Int) {</p><p>	isValidDiscount (code:$code){</p><p>		valid	</p><p>	}</p><p>	isValidDiscount2:isValidDiscount (code:$code){</p><p>		valid	</p><p>	}</p><p>	isValidDiscount3:isValidDiscount (code:$code){</p><p>		valid	</p><p>	}</p><p>}</p></div>
+</body>
+</html>
