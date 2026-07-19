@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Testing for server-side parameter pollution in the query string</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Testing for server-side parameter pollution in the query string</h1><br/><p>To test for server-side parameter pollution, place query syntax characters like #, &amp;, and = and observe the application responses.</p><p></p><p>Here is an example of what can be vulnerable to server-side parameter pollution:</p><p>GET /userSearch?name=peter&amp;back=/home is the request on the client side</p><p>GET /users/search?name=peter&amp;publicProfile=true is what occurs server side before being sent back to the client</p><p></p><p>The goal is to try to malform the rest of the server-side request using the syntax characters. As usual make sure to try URL encoded and regular characters.</p><p></p><p>One method is to send a # to truncate the rest of the server-side request.</p><p>Another is to append the &amp; with some arbitrary extra parameter to see if the extra parameter is parsed or not.</p><p>You can also use discovered hidden parameters along with &amp; as another way of altering the request.</p><p>You can even try overriding the existing parameter by using &amp; and sending the same parameter with a different value. Results for this will vary depending on the framework being used.</p><p></p><p>A RESTful API may place parameters in the URL path instead of as a query string.</p><p>For example /api/user/jimmy rather than /api/user?user=jimmy.</p><p>It is also possible they use queries client side and RESTful server side so attempt path traversal as well.</p></div>
+</body>
+</html>
