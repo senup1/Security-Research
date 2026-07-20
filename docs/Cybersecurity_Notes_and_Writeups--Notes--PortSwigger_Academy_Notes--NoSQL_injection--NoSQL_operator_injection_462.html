@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>NoSQL operator injection</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>NoSQL operator injection</h1><br/><p>Examples of NoSQL operators:</p><p>$where - matches documents that satisfy a JavaScript expression</p><p>$ne - Matches all values that are not equal to a specified value</p><p>$in - Matches all of the values specified in an array</p><p>$regex - Selects documents where values match a specified regular expression</p><p></p><p>Try submitting different operators into a range of user inputs and review the responses</p><p>In JSON, insert query operators as nested objects. For example: {&quot;username&quot;:&quot;test&quot;} becomes {&quot;username&quot;:{&quot;$ne&quot;:&quot;invalid&quot;}}</p><p>For URL based inputs, try inserting via URL parameters. For example: username=test becomes username[$ne]=invalid</p><p>If the above doesn&#39;t work for URL based, Try other method types, try setting the content-type to application/json, then add JSON to the request and send</p><p></p><p>Examples of when to use: </p><p>{</p><p>	“username”:{&quot;$in&quot;:[&quot;admin&quot;, “administrator”, “superadmin”]}, “password”:{&quot;$ne&quot;:&quot;&quot;}</p><p>}</p></div>
+</body>
+</html>

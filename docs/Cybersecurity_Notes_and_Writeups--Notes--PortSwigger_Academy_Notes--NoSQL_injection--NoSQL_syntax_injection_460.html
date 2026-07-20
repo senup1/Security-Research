@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>NoSQL syntax injection</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>NoSQL syntax injection</h1><br/><p>Syntax injection can be detected by attempting to break the query syntax.</p><p>To do this, assuming there are sanitization/filtering issues, test each input by submitting fuzz strings and special characters that trigger a database error or some other detectable behavior.</p><p></p><p>For MongoDB:</p><p>An example of a fuzz string (contains \ns):</p><p>&#39;&quot;`{</p><p>;$Foo}</p><p>$Foo \xYZ</p><p>or &#39;%22%60%7b%0d%0a%3b%24Foo%7d%0d%0a%24Foo%20%5cxYZ%00 for web encoded or &#39;\&quot;`{\r;$Foo}\n$Foo \\xYZ\u0000 for JSON</p><p></p><p>To detect which characters are processed, inject characters one at a time.</p><p>After detecting one, double check by trying to escape it and seeing if the error goes away.</p><p></p><p>After detecting a vulnerability, the next step is to determine if boolean conditions have influence.</p><p>To test this, send one statement equivalent to false and one equivalent to true</p><p>For example: ‘&amp;&amp; 0 &amp;&amp; ’x &lt;or&gt; ‘ &amp;&amp; 1 &amp;&amp; ’x</p><p></p><p>The next step is to inject a condition that always equates to true such as ‘||’1&#39;==&#39;1</p><p>This wil cause the query to return all items.</p><p></p><p>Adding a null character like %00 is treated as a kind of comment to ignore everything after it, so this can be used to prevent any additional queries from functioning.</p><p></p></div>
+</body>
+</html>
