@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Circumventing common SSRF defenses</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Circumventing common SSRF defenses</h1><br/><p>Blacklist based input filters:</p><p>Some applications may block input containing hostnames like 127.0.0.1 and localhost, or sensitive URLs like /admin</p><p>In this case, try decimal notation, hex notation, or omitting the zeroed octets. For 127.0.0.1 it would look like 2130706433, 017700000001, or 127.1 respectively.</p><p>You may also be able to register your own domain name that resolves to 127.0.0.1</p><p>Another option is to try obfuscating/encoding blocked strings or case variation.</p><p></p><p>Whitelist based input filters:</p><p>Some applications may implement whitelisting without checking the full input and just filtering a certian length or stopping the check when enough of the target passes.</p><p>You may be able to trick the filtering by using @ to embed credentials, # to indicate a URL fragment, or using a subdomain on a domain you control with the name of the expected host.</p><p>URL encoding characters may also be necessary.</p><p>Open redirection vulnerabilities may also be used to bypass filters.</p></div>
+</body>
+</html>

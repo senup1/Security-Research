@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Common SSRF attacks</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Common SSRF attacks</h1><br/><p>Typically SSRF attacks involve supplying an HTTP request with a URL that points to the loopback IP which is usually 127.0.0.1 or localhost.</p><p></p><p>Example HTTP request vuln:</p><p>&lt;usual headers&gt;</p><p></p><p>checkAPI=&lt;link to actual endpoint&gt;</p><p></p><p>Chaning the link to the endpoint to localhost/admin or 127.0.0.1/admin or another directory/endpoint/target besides admin would result in the leak of sensitive information. This would only function if the owner of the request was treated as the server rather than the user assuming the server has elavated privelages.</p><p></p><p>In other cases, if the application server interacts with other back-end systems, they may use non-routable private IP addresses. In this case the attacker may attempt to scan the internal network for possible IPs to gain further access/information.</p><p></p></div>
+</body>
+</html>

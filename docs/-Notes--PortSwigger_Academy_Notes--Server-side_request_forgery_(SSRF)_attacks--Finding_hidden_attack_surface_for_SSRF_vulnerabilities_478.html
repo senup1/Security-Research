@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Finding hidden attack surface for SSRF vulnerabilities</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Finding hidden attack surface for SSRF vulnerabilities</h1><br/><p>Many server-side request forgery vulnerabilities can be discovered due to normal traffic using full URLs in parameters vs the use of partial URLs similar to endpoints in HTTP requests by server-side requests.</p><p></p><p>Some applications use server-side analytics software to track users. The analytics software typically visits third-party URLs that appear in the Referer header to analyze the contents of the referring sites. As a result, the Referer header is often a useful attack surface for SSRF vulnerabilities.</p></div>
+</body>
+</html>

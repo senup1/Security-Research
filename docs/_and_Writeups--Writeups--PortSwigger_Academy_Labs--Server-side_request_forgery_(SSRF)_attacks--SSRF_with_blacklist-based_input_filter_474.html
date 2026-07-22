@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>SSRF with blacklist-based input filter</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>SSRF with blacklist-based input filter</h1><br/><p><ol><li>Provided with storefront website, told to access admin interface at http://localhost/admin, and to delete user carlos</li><li>Intercepted check stock request in burpsuite</li><li>Changed stockApi target URL to http%3a//loCalHost/aDmin</li><li>Opened response in browser</li><li>Intercepted request to delete user carlos</li><li>Disovered API endpoint to delete user carlos, applied to original request and sent: </li><li>Deleted user carlos and completed lab successfully: </li></ol><img src="images/474-1.png" alt="images/474-1.png" /><ol><li></li></ol><img src="images/474-2.png" alt="images/474-2.png" /></p></div>
+</body>
+</html>
